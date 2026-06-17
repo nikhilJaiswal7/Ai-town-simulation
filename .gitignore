@@ -1,0 +1,16 @@
+# Environment
+.env
+__pycache__/
+*.pyc
+
+# Databases
+town_state.db
+chroma_db/
+
+# Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+
+# OS files
+.DS_Store
+Thumbs.db

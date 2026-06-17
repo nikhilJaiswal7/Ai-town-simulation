@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+chromadb
+pydantic
+sqlalchemy
+python-dotenv
+openai
