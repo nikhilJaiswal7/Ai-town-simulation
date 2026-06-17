@@ -1,6 +1,5 @@
 # 🌲 AI Village: The Autonomous 3D Ecosystem
 
-![AI Village Banner](https://raw.githubusercontent.com/nikhilJaiswal7/Ai-town-simulation/main/frontend/src/assets/hero.png)
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/Frontend-React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
