@@ -1,143 +1,123 @@
-# 🌲 AI Village: The Autonomous 3D Ecosystem
+# 🌲 AI Village: A Cinematic Autonomous Ecosystem
 
+![AI Village Banner](https://raw.githubusercontent.com/nikhilJaiswal7/Ai-town-simulation/main/frontend/src/assets/hero.png)
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
 [![React](https://img.shields.io/badge/Frontend-React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![Three.js](https://img.shields.io/badge/Graphics-Three.js-black?style=for-the-badge&logo=three.js&logoColor=white)](https://threejs.org/)
 [![OpenAI](https://img.shields.io/badge/Intelligence-OpenAI_GPT--3.5-412991?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **"In the silence of the gears, the village finds its soul."**  
-> An advanced, production-grade 3D simulation of autonomous AI agents living in a persistent, procedural ecosystem.
-
----
-
-## 🎭 The Village Lore
-
-Nestled between rolling hills and a winding river lies a town unlike any other. Its inhabitants don't just follow scripts; they **think, remember, and socialize**. Every character carries the weight of their past interactions, whispered secrets, and personal ambitions.
-
-*   **The Clockmaker** watches the rust of time.
-*   **The Herbalist** hunts for secrets in the moss.
-*   **The Traveler** gazes at constellations that only he understands.
+> **"A living, breathing 3D world where AI agents don't just exist—they live."**  
+> AI Village is a production-grade, real-time 3D simulation of autonomous agents inhabiting a persistent procedural ecosystem. Experience a world of deep memory, social dynamics, and cinematic atmosphere.
 
 ---
 
-## 🚀 Advanced Features
+## 🎭 The Living World
 
-### 🧠 The "Global Brain" Architecture (Real-Time WebSockets)
-Unlike traditional simulations that use static polling, **AI Village** is powered by a high-frequency WebSocket backbone.
-*   **Autonomous Server-Side Loop:** The backend ticks every second, processing pathfinding, proximity checks, and state transitions.
-*   **State Synchronization:** Every millisecond coordinate shift is broadcast to all clients, ensuring a perfectly mirrored world for every observer.
+Welcome to a village that never sleeps. Our 6 unique citizens perform daily routines, share whispered secrets, and remember every interaction. 
 
-### 📜 Persistent RAG-Based Memory
-Every NPC is equipped with a **Retrieval-Augmented Generation (RAG)** system powered by **ChromaDB**.
-*   **Long-Term Memory:** Interactions aren't forgotten. They are vectorized and stored.
-*   **Semantic Retrieval:** When you or another NPC speaks to a character, they "recall" relevant past experiences to shape their response.
-*   **Memory Growth:** The more the village lives, the deeper and more complex its social fabric becomes.
-
-### 🏘️ Hybrid Procedural 3D Engine
-Designed for **zero-friction loading** and extreme stability.
-*   **Infinite Landscapes:** Procedural hills, rivers, and forests built with raw Three.js math.
-*   **Animated Entities:** Stylized characters with custom "bob-and-lerp" animation logic for organic movement.
-*   **Dynamic Lighting:** Real-time shadow casting and glowing emissive windows that bring the village to life at "night."
-
-### 🛡️ Resilient Intelligence Engine
-*   **Smart Fallbacks:** Integrated a **Local Personality Engine** that maintains character immersion even if OpenAI quotas are exceeded. The village never goes "braindead."
+*   **Elias the Clockmaker** winds the village gears.
+*   **Bramble the Fisherman** patrols the animated river.
+*   **Clara the Baker** fills the air with the scent of fresh bread (and chimney smoke).
 
 ---
 
-## 🛠️ Technical Breakdown
+## ✨ Cutting-Edge Features
+
+### 🎬 Cinematic Graphics Pipeline
+*   **Post-Processing Suite:** High-end **Bloom**, **Vignette**, and **Film Grain** effects for a professional animated aesthetic.
+*   **Procedural FX:** Real-time **Chimney Smoke particles** and a **dynamic water shader** with reflected highlights.
+*   **Glass-Morphism HUD:** A modern, high-fidelity UI that tracks village statistics and simulation status in real-time.
+
+### 🧠 Autonomous Chore Engine
+*   **Purposeful Routines:** NPCs possess logic-driven schedules. They travel to specific "Hotspots" (River, Bakery, Hills) to perform chores based on their unique identities.
+*   **Proximity-Based Socializing:** Agents automatically detect neighbors, stop their routines, and engage in context-aware conversations powered by **OpenAI**.
+*   **Zero-Latency Fallbacks:** A custom **Local Personality Engine** ensures the village remains alive and chatty even when external AI quotas are reached.
+
+### 📜 Deep RAG Memory (Vectorized Souls)
+*   **ChromaDB Integration:** Every word spoken is vectorized and stored in a long-term memory bank.
+*   **Semantic Recall:** NPCs recall relevant past "gossip" and previous encounters to shape their current mood and responses.
+
+---
+
+## 🛠️ System Architecture
 
 ```mermaid
 graph TD
-    subgraph Frontend [React + Three.js]
-        Canvas[3D Scene]
+    subgraph Client_Layer [Frontend: React + Three.js]
+        Scene[3D Cinematic Scene]
+        Shaders[Water & Particle Shaders]
         WS_Client[WebSocket Client]
-        UI[Overlay UI]
+        PostFX[Bloom / Vignette / Noise]
     end
 
-    subgraph Backend [FastAPI + Python]
-        GameLoop[Game Loop - 1Hz]
+    subgraph Server_Layer [Backend: FastAPI + Python]
+        GameLoop[High-Frequency Game Loop]
+        ChoreEngine[NPC Chore Dispatcher]
         WS_Server[WebSocket Server]
-        AgentAI[Agent Decision Engine]
     end
 
-    subgraph Intelligence [AI Layer]
-        OpenAI[GPT-3.5 API]
-        LocalBrain[Personality Fallback]
-        VectorDB[ChromaDB Memory]
+    subgraph AI_Intelligence [Brain Layer]
+        GPT[OpenAI GPT-3.5]
+        VectorStore[ChromaDB Memory]
+        LocalEngine[Personality Fallback]
     end
 
     WS_Client <--> WS_Server
-    GameLoop --> AgentAI
-    AgentAI --> OpenAI
-    AgentAI --> VectorDB
-    AgentAI --> LocalBrain
-    Canvas --> UI
+    GameLoop --> ChoreEngine
+    ChoreEngine --> BrainMatch{Context Check}
+    BrainMatch --> GPT
+    BrainMatch --> VectorStore
+    BrainMatch --> LocalEngine
+    Scene --> PostFX
 ```
 
 ---
 
-## ⚡ Quick Start
+## ⚡ Setup & Deployment
 
 ### 1. Requirements
 *   Python 3.10+
 *   Node.js 18+
 
-### 2. Clone & Install
-```bash
-git clone https://github.com/nikhilJaiswal7/Ai-town-simulation.git
-cd Ai-town-simulation
-```
-
-### 3. Launch the Soul (Backend)
+### 2. Launch Backend
 ```bash
 cd backend
 pip install -r requirements.txt
-# Add OPENAI_API_KEY to .env for full intelligence
+# Create .env with OPENAI_API_KEY for full AI features
 uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
-### 4. Open the Window (Frontend)
+### 3. Launch Frontend
 ```bash
-cd ../frontend
+cd frontend
 npm install
 npm run dev
 ```
 
----
-
-## 🗺️ Character Roster
-
-| Villager | Archetype | Soul/Personality |
-| :--- | :--- | :--- |
-| **Elias** | 🕰️ Clockmaker | Reclusive, speaks in metaphors about time and decay. |
-| **Sera** | ✍️ Poet | Quiet, intense presence, lost her voice but not her mind. |
-| **Thistle** | 🌿 Herbalist | Energetic, searching for rare moss near the river. |
-| **Bramble** | 🎣 Fisherman | Grumpy but observant, watches the river's secrets. |
-| **Clara** | 🍞 Baker | Warm, laughter like fresh bread, the village's heart. |
-| **Silas** | 🌌 Traveler | Mysterious, gazes at the stars from the high hills. |
+Visit **[http://localhost:5173/](http://localhost:5173/)** to step into the village.
 
 ---
 
-## 🛤️ Future Roadmap
+## 🗺️ Village Cast & Activities
 
-- [ ] **Dynamic Weather:** Rain and fog affecting NPC moods.
-- [ ] **Player Influence:** The ability to "drop" items that NPCs can find and discuss.
-- [ ] **Village Council:** Scheduled meetings where all NPCs gather to debate the village's future.
-- [ ] **Visual Upgrades:** Real-time day/night cycles with shifting shadows.
+| Citizen | Role | Daily Routine | Personality |
+| :--- | :--- | :--- | :--- |
+| **Elias** | 🕰️ Clockmaker | Winding the Great Clock | Metaphorical, Reclusive |
+| **Bramble** | 🎣 Fisherman | Patrolling the Riverbanks | Grumpy, Observant |
+| **Thistle** | 🌿 Herbalist | Searching the East Hills | Energetic, Curious |
+| **Clara** | 🍞 Baker | Working at the Village Bakery | Warm, Welcoming |
+| **Sera** | ✍️ Poet | Stargazing on the West Hill | Quiet, Intense |
+| **Silas** | 🌌 Traveler | Wandering the Valley | Mysterious, Wise |
 
 ---
 
-## 🤝 Contributing
+## 🛤️ Project Roadmap
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- [x] **Cinematic FX:** Bloom, Vignette, and Particle Systems.
+- [x] **Chore System:** Logic-driven NPC daily routines.
+- [ ] **Dynamic Weather:** Rain and fog affecting NPC pathfinding.
+- [ ] **Economic Layer:** NPCs "trading" items found during chores.
 
 ---
 
